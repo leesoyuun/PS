@@ -6,9 +6,20 @@
     <body>
         <script>
             function solution(s){         
-                let answer="";  
-                answer = s.toUpperCase();
+                // let answer="";
+                // answer = s.toUpperCase();
+                // return answer;
 
+                //otehr solve
+                let answer = "";
+                for(let x of s){
+                    if(x == x.toLowerCase()){
+                        answer+=x.toUpperCase();
+                    }
+                    else{
+                        answer+=x;
+                    }
+                }
                 return answer;
             }
             let str="ItisTimeToStudy";
