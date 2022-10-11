@@ -6,11 +6,16 @@
     <body>
         <script>
             function solution(s){  
-                let answer="";
-                for(let i = 0; i<s.length; i++){
-                    if(i == s.indexOf(s[i]))
-                        answer += s[i] + '\n'
-                }
+                let answer;
+                answer = s.filter(function(n,i){
+                    if(i == s.indexOf(n))
+                        return answer += n
+                });
+                // for(let i = 0; i<s.length; i++){
+                //     if(i == s[i])
+                //         answer += s
+                // }
+
                 return answer;
             }
             let str=["good", "time", "good", "time", "student"];
