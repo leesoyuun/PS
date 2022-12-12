@@ -1,4 +1,4 @@
-function solution(my_string) {
+/*function solution(my_string) {
     var answer = '';
     for(let i of my_string){
         if(i == i.toUpperCase()){
@@ -8,4 +8,8 @@ function solution(my_string) {
         }
     }
     return answer;
+}*/
+
+function solution(my_string) {
+    return my_string.split('').map(n => n === n.toUpperCase() ? n.toLowerCase() : n.toUpperCase()).join('')
 }
