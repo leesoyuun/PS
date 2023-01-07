@@ -1,4 +1,4 @@
-function solution(cipher, code) {
+/*function solution(cipher, code) {
     var arr = [...cipher];
     var answer = [];
     for(let i = 1; i<=cipher.length; i++){
@@ -7,4 +7,7 @@ function solution(cipher, code) {
         }
     }
     return answer.join('');
+}*/
+function solution(cipher, code) {
+    return cipher.split('').filter((a,b) => (b+1)%code == 0).join('')
 }
