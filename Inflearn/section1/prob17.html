@@ -7,16 +7,16 @@
         <script>
             function solution(s){  
                 let answer;
-                answer = s.filter(function(n,i){
-                    if(i == s.indexOf(n))
-                        return answer += n
-                });
+                // answer = s.filter(function(n,i){
+                //     if(i == s.indexOf(n))
+                //         return answer += n
+                // });
                 // for(let i = 0; i<s.length; i++){
                 //     if(i == s[i])
                 //         answer += s
                 // }
 
-                return answer;
+                return Array.from(new Set(str));
             }
             let str=["good", "time", "good", "time", "student"];
             console.log(solution(str));
