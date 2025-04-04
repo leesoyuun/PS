@@ -1,3 +1,3 @@
 function solution(n){
-    return n.toString().split('').reduce((acc,cur)=>acc+=Number(cur),0);
+       return String(n).split('').reduce((acc,cur) => acc += Number(cur),0)
 }
