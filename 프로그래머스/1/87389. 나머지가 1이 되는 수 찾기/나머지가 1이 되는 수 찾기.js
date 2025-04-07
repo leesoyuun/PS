@@ -1,10 +1,10 @@
 function solution(n) {
-    let answer = 0;
-    for(let i = 1 ; i <=n ; i++){
+    let x = n;
+    
+    for(let i = n ; i > 1 ; i--){
         if(n % i === 1){
-            answer = i;
-            break;
+            x = i;
         }
     }
-    return answer;
+    return x;
 }
