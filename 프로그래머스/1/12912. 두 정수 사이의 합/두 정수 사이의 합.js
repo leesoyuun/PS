@@ -1,14 +1,9 @@
 function solution(a, b) {
-    let sum = 0;
-    if(a===b) return a;
-    else if(a>b){
-        for(let i = b ; i<=a ; i++){
-            sum+=i;
-        }
-    }else{
-        for(let i = a ; i <= b ; i++){
-            sum+= i;
-        }
+    const numberList = [];
+    const MaxNum = Math.max(a,b);
+    const MinNum = Math.min(a,b);
+    for(let i = MinNum ; i <= MaxNum ; i++){
+        numberList.push(i);
     }
-    return sum;
+    return numberList.reduce((acc,cur) => acc+=cur);
 }
