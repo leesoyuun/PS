@@ -1,11 +1,10 @@
 function solution(s){
-    let answer = false;
-    let new_s = s.toUpperCase();
-    let p_num = 0;
-    let y_num = 0;
-    for(let i of new_s){
-        if(i === 'P') p_num++;
-        if(i === 'Y') y_num++;
+    const tempS = s.toLowerCase();
+    let pNum = 0;
+    let yNum = 0;
+    for(let i = 0 ; i <tempS.length; i++){
+        if(tempS[i] === 'p') pNum++;
+        if(tempS[i] === 'y') yNum++;
     }
-    return p_num === y_num ? true : false;
+    return pNum === yNum ? true : false;
 }
