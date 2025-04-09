@@ -1,4 +1,4 @@
 function solution(n) {
-    let sqrt = Math.sqrt(n);
-    return sqrt === Math.floor(n/sqrt) ? Math.pow(sqrt+1,2) : -1;
+    const sqrtN = Math.sqrt(n);
+    return Number.isInteger(sqrtN) ? Math.pow(sqrtN+1,2) : -1;
 }
