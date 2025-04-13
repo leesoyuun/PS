@@ -1,7 +1,4 @@
 function solution(arr, divisor) {
-    let answer = [];
-    for(let i = 0 ; i < arr.length ; i++){
-        if(Number.isInteger(arr[i]/divisor)) answer.push(arr[i]);
-    }
-    return answer.length === 0 ? [-1] : answer.sort((a,b)=>a-b);
+    const arr2 = arr.filter((val) => val % divisor === 0).sort((a,b) => a-b);
+    return arr2.length ? arr2 : [-1];
 }
