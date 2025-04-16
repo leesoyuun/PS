@@ -1,8 +1,3 @@
 function solution(n) {
-    let watermelon = ['수','박'];
-    let answer = [];
-    for(let i = 0 ; i < n ; i++){
-        answer.push(watermelon[i%watermelon.length]);
-    }
-    return answer.join('');
+    return n % 2 === 0 ? '수박'.repeat(n/2) : '수박'.repeat(Math.floor(n/2))+'수';
 }
