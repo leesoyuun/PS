@@ -1,11 +1,14 @@
 function solution(t, p) {
-    let sliceT = [];
-    let cnt = 0;
-    for(let i = 0 ; i <= t.length - p.length ; i++){
-        sliceT.push(t.slice(i,i+p.length));
+    let TLen = [];
+    let answer = 0;
+    
+    for(let i = 0 ; i < t.length ; i++){
+        TLen.push(t.slice(i,i+p.length));
     }
-    for(let i = 0 ; i < sliceT.length ; i++){
-        sliceT[i] <= p ? cnt++ : cnt += 0;
+    
+    let filterTLen = TLen.filter((val) => val.length === p.length);
+    for(let i = 0 ; i < filterTLen.length ; i++){
+        if(+filterTLen[i] <= +p) answer++;
     }
-    return cnt;
+    return answer;
 }
