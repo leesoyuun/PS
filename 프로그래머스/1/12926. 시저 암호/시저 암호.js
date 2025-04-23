@@ -1,24 +1,19 @@
 function solution(s, n) {
-    let final_answer = '';
-    let sASCII = '';
-    for(let i = 0 ; i <s.length ; i++){
-        let ASCII = s[i].charCodeAt();
-        let sASCII = ASCII + n;
-        let answer = '';
-        if(ASCII == 32) answer+= 32;
-        //대문자
-        if(ASCII>= 65 && ASCII <=90){
-            if(sASCII > 90) {
-                sASCII -= 26; 
-            }
-            answer +=sASCII;
-        }else if(ASCII>=97 && ASCII <=122){
-            if(sASCII > 122) {
-                sASCII -= 26; 
-            }
-            answer +=sASCII;
+    var answer = '';
+    
+    for(let i = 0 ; i < s.length ; i++){
+        const ASCII = s[i].charCodeAt();
+        let sumASCII = s[i].charCodeAt() + n;
+        
+        if(s[i] === ' ') answer += ' ';
+        if(ASCII >= 65 && ASCII <= 90){
+            if(sumASCII > 90)  sumASCII -= 26;
+            answer += String.fromCharCode(sumASCII);
         }
-        final_answer += String.fromCharCode(answer);
-    }   
-    return final_answer;
+        if(ASCII >= 97 && ASCII <= 122){
+            if(sumASCII > 122) sumASCII -= 26;
+            answer += String.fromCharCode(sumASCII);
+        }
+    }
+    return answer;
 }
