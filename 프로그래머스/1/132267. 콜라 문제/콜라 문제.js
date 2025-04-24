@@ -1,8 +1,8 @@
 function solution(a, b, n) {
-    let getcol = 0;
+    var answer = 0;
     while(n>=a){
-        getcol += (Math.floor(n/a))*b;
-        n = Math.floor(n/a)*b + n%a;
+        answer += (Math.floor(n/a)) * b;
+        n = (Math.floor(n/a)) * b + n%a;
     }
-    return getcol;
+    return answer;
 }
