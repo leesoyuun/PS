@@ -1,19 +1,11 @@
 function solution(k, score) {
-    let result = [];
-    let tempArr = [];
+    var tempWinner = [];
+    var answer = [];
+    
     for(let i = 0 ; i < score.length ; i++){
-        if(i < k){
-            tempArr.push(score[i]);
-            result.push(Math.min(...tempArr));
-        }else{
-            if(Math.min(...tempArr) < score[i]){
-                tempArr.sort((a,b)=>b-a).pop();
-                tempArr.push(score[i]);
-                result.push(Math.min(...tempArr));
-            }else{
-                result.push(Math.min(...tempArr));
-            }
-        }
+        tempWinner.push(score[i]);
+        if(i >= k) tempWinner.splice(tempWinner.indexOf(Math.min(...tempWinner)),1);
+        answer.push(Math.min(...tempWinner));
     }
-    return result;
+    return answer;
 }
