@@ -1,18 +1,18 @@
-function divisors(num){
-    let cnt = 0;
-    for(let i = 1 ; i <= Math.sqrt(num) ; i++){
-        if(num%i === 0){
+function divisorCnt(number){
+    var cnt = 0;
+    for(let i = 1 ; i <= Math.sqrt(number) ; i++){
+        if(number % i === 0) {
             cnt++;
-            if(num/i != i) cnt++;
+            if(number / i !==i) cnt++;
         }
     }
     return cnt;
 }
 
 function solution(number, limit, power) {
-    let divisor_cnt = [];
-    for(let i = 1 ; i <= number; i++){
-        divisor_cnt.push(divisors(i));
+    var divisorList = [];
+    for(let i = 1 ; i <= number ; i++){
+        divisorList.push(divisorCnt(i));
     }
-    return divisor_cnt.map(x=>x>limit ? power : x).reduce((acc,cur)=>acc+=cur);
+    return divisorList.reduce((acc,cur) => cur > limit ? acc+= power : acc+=cur);
 }
