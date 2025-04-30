@@ -1,9 +1,20 @@
 function solution(k, m, score) {
-    score = score.sort((a,b)=>b-a);
-    let temp = [];
-    for(let i = 0 ; i < score.length ; i+=m){
-        temp.push(score.slice(i,i+m));
+    //k점사과
+    //m개씩 담아 포장
+    
+    const sortApple = score.sort((a,b) => b-a);
+    const tempApple = [];
+    var answer = 0;
+    
+    for(let i = 0 ; i < score.length; i+=m){
+        tempApple.push(sortApple.slice(i,m+i));
     }
     
-    return temp.map((x) => x.length === m ? Math.min(...x)*1*m : 0).reduce((acc,cur)=>acc+=cur);
+    for(let i = 0 ; i < tempApple.length; i++){
+        if(tempApple[i].length === m) {
+            answer+=Math.min(...tempApple[i]) * m
+        }
+    }
+    return answer;
+    
 }
