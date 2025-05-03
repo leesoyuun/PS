@@ -1,15 +1,14 @@
 function solution(babbling) {
+    const ong = ['aya','ye','woo','ma'];
     let answer = 0;
-    let announce = ['aya','ye','woo','ma'];
-
+    
     for(let i of babbling){
-        let babble = i;
-        for(let x of announce){
-            if(babble.includes(x.repeat(2))) break;
-            babble = babble.split(x).join(' ');
+        let temp = i;
+        for(let j of ong){ 
+            if(i.includes(j.repeat(2))) break;
+            temp = temp.split(j).join(' ');
         }
-        babble.split(' ').join('').length === 0 ? answer++ : answer+=0;
+        temp.split(' ').join('').length === 0 ? answer++ : answer+=0;
     }
     return answer;
-    
 }
